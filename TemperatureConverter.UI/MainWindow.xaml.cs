@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TemperatureConverter.UI.TemperatureConversion;
 
 namespace TemperatureConverter.UI
 {
@@ -24,7 +25,7 @@ namespace TemperatureConverter.UI
 		{
 			InitializeComponent();
 
-			DataContext = new MainWindowViewModel(new TemperatureConverterViewModel(new TemperatureConverter.Math.TemperatureConverter()));
+			DataContext = new MainWindowViewModel(new TemperatureConverterViewModel(new TemperatureConverter.Math.TemperatureConverter(), new UserNotifications.UserNotificationManager()));
 		}
 	}
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TemperatureConverter.UI.TemperatureConverterView"
+﻿<UserControl x:Class="TemperatureConverter.UI.TemperatureConversion.TemperatureConverterView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mvvm="clr-namespace:TemperatureConverter.UI.Mvvm"
@@ -6,7 +6,7 @@
 	<UserControl.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Common.xaml"/>
+				<ResourceDictionary Source="..\Common.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 
 			<mvvm:BooleanInversionConverter x:Key="BooleanInversionConverter"/>
@@ -18,7 +18,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>
 			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="100"/>
+			<ColumnDefinition Width="200"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -38,7 +38,7 @@
 
 		<TextBox
 			Grid.Row="0" Grid.Column="2"
-			Text="{Binding InputValue}"/>
+			Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"/>
 
 		<Button
 			Grid.Row="1" Grid.Column="0"

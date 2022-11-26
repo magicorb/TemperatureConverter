@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TemperatureConverter.Math;
 using TemperatureConverter.UI.Mvvm;
+using TemperatureConverter.UI.TemperatureConversion;
 
 namespace TemperatureConverter.UI
 {

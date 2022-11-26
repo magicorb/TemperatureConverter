@@ -10,12 +10,12 @@ namespace TemperatureConverter.Math
 	{
 		public async Task<decimal> CelciusToFahrenheitAsync(decimal value)
 		{
-			return value;
+			return 9M / 5 * value + 32;
 		}
 
 		public async Task<decimal> FahrenheitToCelciusAsync(decimal value)
 		{
-			return value;
+			return 5M / 9 * (value - 32);
 		}
 	}
 }

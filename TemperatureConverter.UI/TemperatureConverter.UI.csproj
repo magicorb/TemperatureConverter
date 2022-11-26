@@ -55,11 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ITemperatureConverterViewModel.cs" />
-    <Compile Include="TemperatureConverterView.xaml.cs">
+    <Compile Include="TemperatureConversion\ITemperatureConverterViewModel.cs" />
+    <Compile Include="TemperatureConversion\TemperatureConverterView.xaml.cs">
       <DependentUpon>TemperatureConverterView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TemperatureConverterViewModel.cs" />
+    <Compile Include="TemperatureConversion\TemperatureConverterViewModel.cs" />
+    <Compile Include="UserNotifications\IUserNotificationManager.cs" />
+    <Compile Include="UserNotifications\UserNotificationManager.cs" />
     <Page Include="Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +78,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TemperatureConverterView.xaml">
+    <Page Include="TemperatureConversion\TemperatureConverterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

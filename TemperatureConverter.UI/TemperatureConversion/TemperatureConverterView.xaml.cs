@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TemperatureConverter.UI
+namespace TemperatureConverter.UI.TemperatureConversion
 {
 	/// <summary>
 	/// Interaction logic for TemperatureConverterView.xaml

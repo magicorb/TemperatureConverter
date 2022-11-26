@@ -129,7 +129,13 @@
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Temperature Converter</value>
   </data>
+  <data name="OverflowWarning" xml:space="preserve">
+    <value>Can not caculate the result becasue is its too big or too small</value>
+  </data>
   <data name="SwapUnitsTooltip" xml:space="preserve">
     <value>Swap units</value>
+  </data>
+  <data name="WarningWindowTitle" xml:space="preserve">
+    <value>Warning</value>
   </data>
 </root>

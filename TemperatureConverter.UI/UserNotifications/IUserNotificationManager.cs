@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemperatureConverter.UI
+namespace TemperatureConverter.UI.UserNotifications
 {
-	public interface ITemperatureConverterViewModel
+	public interface IUserNotificationManager
 	{
+		void Warning(string text);
 	}
 }

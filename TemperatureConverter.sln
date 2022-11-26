@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverter.UI", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverter.Math", "TemperatureConverter.Math\TemperatureConverter.Math.csproj", "{387BC3E5-8F1E-49D4-956C-4FCBD26B8677}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureConverter.Math.UnitTests", "TemperatureConverter.Math.UnitTests\TemperatureConverter.Math.UnitTests.csproj", "{307C08BF-732E-4F1B-A3D1-FBFC8729813F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{387BC3E5-8F1E-49D4-956C-4FCBD26B8677}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{387BC3E5-8F1E-49D4-956C-4FCBD26B8677}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{387BC3E5-8F1E-49D4-956C-4FCBD26B8677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307C08BF-732E-4F1B-A3D1-FBFC8729813F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307C08BF-732E-4F1B-A3D1-FBFC8729813F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307C08BF-732E-4F1B-A3D1-FBFC8729813F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307C08BF-732E-4F1B-A3D1-FBFC8729813F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

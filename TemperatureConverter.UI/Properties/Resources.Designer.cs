@@ -97,11 +97,29 @@ namespace TemperatureConverter.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can not caculate the result becasue is its too big or too small.
+        /// </summary>
+        public static string OverflowWarning {
+            get {
+                return ResourceManager.GetString("OverflowWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Swap units.
         /// </summary>
         public static string SwapUnitsTooltip {
             get {
                 return ResourceManager.GetString("SwapUnitsTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string WarningWindowTitle {
+            get {
+                return ResourceManager.GetString("WarningWindowTitle", resourceCulture);
             }
         }
     }
