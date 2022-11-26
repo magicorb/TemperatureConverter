@@ -12,48 +12,52 @@
 			<mvvm:BooleanInversionConverter x:Key="BooleanInversionConverter"/>
 		</ResourceDictionary>
 	</UserControl.Resources>
-	
+
 	<Grid
 		IsEnabled="{Binding IsBusy, Converter={StaticResource BooleanInversionConverter}}">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="208"/>
 			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="200"/>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<Button
-			Grid.Row="0" Grid.Column="0"
-			Command="{Binding SwapUnitsCommand}"
-			ToolTip="{x:Static properties:Resources.SwapUnitsTooltip}">
-			Switch
-		</Button>
-
 		<TextBlock
-			Grid.Row="0" Grid.Column="1"
+			Grid.Row="0" Grid.Column="0"
 			Text="{Binding InputUnitLabel}"/>
 
 		<TextBox
-			Grid.Row="0" Grid.Column="2"
-			Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"/>
+			Grid.Row="0" Grid.Column="1"
+			Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
+			ToolTip="{x:Static properties:Resources.InputTooltip}"/>
 
 		<Button
-			Grid.Row="1" Grid.Column="0"
+			Grid.Row="0" Grid.Column="2"
 			Command="{Binding ConvertCommand}"
-			ToolTip="{x:Static properties:Resources.ConvertTooltip}">
-			Calculate
+			ToolTip="{x:Static properties:Resources.ConvertTooltip}"
+			Style="{StaticResource ImageButtonStyle}">
+			<Image Source="..\Images\Calculator.png" Style="{StaticResource ButtonImageStyle}"/>
 		</Button>
 
 		<TextBlock
-			Grid.Row="1" Grid.Column="1"
+			Grid.Row="1" Grid.Column="0"
 			Text="{Binding OutputUnitLabel}"/>
 
 		<TextBox
-			Grid.Row="1" Grid.Column="2"
+			Grid.Row="1" Grid.Column="1"
 			Text="{Binding OutputValue, Mode=OneWay}"
-			Style="{StaticResource OutputTextBoxStyle}"/>
+			Style="{StaticResource OutputTextBoxStyle}"
+			ToolTip="{x:Static properties:Resources.OutputTooltip}"/>
+
+		<Button
+			Grid.Row="1" Grid.Column="2"
+			Command="{Binding SwapUnitsCommand}"
+			ToolTip="{x:Static properties:Resources.SwapUnitsTooltip}"
+			Style="{StaticResource ImageButtonStyle}">
+			<Image Source="..\Images\SwitchSourceOrTarget.png" Style="{StaticResource ButtonImageStyle}"/>
+		</Button>
 	</Grid>
 </UserControl>

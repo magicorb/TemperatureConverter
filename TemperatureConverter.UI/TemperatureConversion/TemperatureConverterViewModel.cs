@@ -26,12 +26,15 @@ namespace TemperatureConverter.UI.TemperatureConversion
 		}
 
 		private string _inputUnitLabel;
+
 		public string InputUnitLabel { get => _inputUnitLabel; private set => SetProperty(ref _inputUnitLabel, value); }
 
 		private string _outputUnitLabel;
+
 		public string OutputUnitLabel { get => _outputUnitLabel; private set => SetProperty(ref _outputUnitLabel, value); }
 
 		private decimal? _inputValue;
+
 		public decimal? InputValue
 		{
 			get => _inputValue;
@@ -45,9 +48,11 @@ namespace TemperatureConverter.UI.TemperatureConversion
 		}
 
 		private decimal? _outputValue;
+
 		public decimal? OutputValue { get => _outputValue; private set => SetProperty(ref _outputValue, value); }
 
 		private bool _isBusy;
+
 		public bool IsBusy { get => _isBusy; private set => SetProperty(ref _isBusy, value); }
 
 		public ICommand SwapUnitsCommand { get; }
@@ -59,6 +64,7 @@ namespace TemperatureConverter.UI.TemperatureConversion
 		private readonly IUserNotificationManager _userNotificationManager;
 
 		private bool _isCelciusToFahrenheit;
+
 		private bool IsCelciusToFahrenheit
 		{
 			get => _isCelciusToFahrenheit;

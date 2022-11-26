@@ -88,11 +88,29 @@ namespace TemperatureConverter.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter a value.
+        /// </summary>
+        public static string InputTooltip {
+            get {
+                return ResourceManager.GetString("InputTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temperature Converter.
         /// </summary>
         public static string MainWindowTitle {
             get {
                 return ResourceManager.GetString("MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Conversion result.
+        /// </summary>
+        public static string OutputTooltip {
+            get {
+                return ResourceManager.GetString("OutputTooltip", resourceCulture);
             }
         }
         

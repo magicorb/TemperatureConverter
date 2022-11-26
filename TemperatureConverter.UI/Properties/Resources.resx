@@ -126,8 +126,14 @@
   <data name="FahrenheitLabel" xml:space="preserve">
     <value>F°</value>
   </data>
+  <data name="InputTooltip" xml:space="preserve">
+    <value>Enter a value</value>
+  </data>
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Temperature Converter</value>
+  </data>
+  <data name="OutputTooltip" xml:space="preserve">
+    <value>Conversion result</value>
   </data>
   <data name="OverflowWarning" xml:space="preserve">
     <value>Can not caculate the result becasue is its too big or too small</value>
