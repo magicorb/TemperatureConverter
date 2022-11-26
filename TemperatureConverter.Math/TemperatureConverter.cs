@@ -8,12 +8,12 @@ namespace TemperatureConverter.Math
 {
 	public class TemperatureConverter : ITemperatureConverter
 	{
-		public decimal CelciusToFahrenheit(decimal value)
+		public async Task<decimal> CelciusToFahrenheitAsync(decimal value)
 		{
 			return value;
 		}
 
-		public decimal FahrenheitToCelcius(decimal value)
+		public async Task<decimal> FahrenheitToCelciusAsync(decimal value)
 		{
 			return value;
 		}

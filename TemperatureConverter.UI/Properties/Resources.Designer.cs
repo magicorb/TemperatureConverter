@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UnitConverter.UI.Properties {
+namespace TemperatureConverter.UI.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace UnitConverter.UI.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UnitConverter.UI.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TemperatureConverter.UI.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,47 @@ namespace UnitConverter.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to C°.
+        /// </summary>
+        public static string CelciusLabel {
+            get {
+                return ResourceManager.GetString("CelciusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Convert.
+        /// </summary>
+        public static string ConvertTooltip {
+            get {
+                return ResourceManager.GetString("ConvertTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to F°.
+        /// </summary>
+        public static string FahrenheitLabel {
+            get {
+                return ResourceManager.GetString("FahrenheitLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temperature Converter.
         /// </summary>
         public static string MainWindowTitle {
             get {
                 return ResourceManager.GetString("MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swap units.
+        /// </summary>
+        public static string SwapUnitsTooltip {
+            get {
+                return ResourceManager.GetString("SwapUnitsTooltip", resourceCulture);
             }
         }
     }

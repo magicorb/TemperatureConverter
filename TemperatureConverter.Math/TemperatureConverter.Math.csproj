@@ -7,8 +7,8 @@
     <ProjectGuid>{387BC3E5-8F1E-49D4-956C-4FCBD26B8677}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitConverter.Math</RootNamespace>
-    <AssemblyName>UnitConverter.Math</AssemblyName>
+    <RootNamespace>TemperatureConverter.Math</RootNamespace>
+    <AssemblyName>TemperatureConverter.Math</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

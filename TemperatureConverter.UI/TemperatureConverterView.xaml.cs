@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace TemperatureConverter.UI
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for TemperatureConverterView.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class TemperatureConverterView : UserControl
 	{
-		public MainWindow()
+		public TemperatureConverterView()
 		{
 			InitializeComponent();
-
-			DataContext = new MainWindowViewModel(new TemperatureConverterViewModel(new TemperatureConverter.Math.TemperatureConverter()));
 		}
 	}
 }

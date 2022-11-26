@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CelciusLabel" xml:space="preserve">
+    <value>C°</value>
+  </data>
+  <data name="ConvertTooltip" xml:space="preserve">
+    <value>Convert</value>
+  </data>
+  <data name="FahrenheitLabel" xml:space="preserve">
+    <value>F°</value>
+  </data>
   <data name="MainWindowTitle" xml:space="preserve">
     <value>Temperature Converter</value>
+  </data>
+  <data name="SwapUnitsTooltip" xml:space="preserve">
+    <value>Swap units</value>
   </data>
 </root>
