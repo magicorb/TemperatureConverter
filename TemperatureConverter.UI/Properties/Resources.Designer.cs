@@ -88,6 +88,15 @@ namespace TemperatureConverter.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incorrect format.
+        /// </summary>
+        public static string InputError {
+            get {
+                return ResourceManager.GetString("InputError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter a value.
         /// </summary>
         public static string InputTooltip {

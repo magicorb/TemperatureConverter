@@ -126,6 +126,9 @@
   <data name="FahrenheitLabel" xml:space="preserve">
     <value>F°</value>
   </data>
+  <data name="InputError" xml:space="preserve">
+    <value>Incorrect format</value>
+  </data>
   <data name="InputTooltip" xml:space="preserve">
     <value>Enter a value</value>
   </data>

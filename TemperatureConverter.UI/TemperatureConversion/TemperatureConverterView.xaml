@@ -31,8 +31,8 @@
 
 		<TextBox
 			Grid.Row="0" Grid.Column="1"
-			Text="{Binding InputValue, UpdateSourceTrigger=PropertyChanged}"
-			ToolTip="{x:Static properties:Resources.InputTooltip}"/>
+			Text="{Binding InputText, UpdateSourceTrigger=PropertyChanged}"
+			ToolTip="{Binding InputTooltip}"/>
 
 		<Button
 			Grid.Row="0" Grid.Column="2"

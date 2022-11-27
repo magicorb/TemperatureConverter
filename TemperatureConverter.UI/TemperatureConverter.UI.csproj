@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="ContainerFactory.cs" />
     <Compile Include="IMainWindowViewModel.cs" />
+    <Compile Include="Mvvm\ValidatingViewModelBase.cs" />
     <Compile Include="TemperatureConversion\ITemperatureConverterViewModel.cs" />
     <Compile Include="TemperatureConversion\TemperatureConverterView.xaml.cs">
       <DependentUpon>TemperatureConverterView.xaml</DependentUpon>
@@ -112,6 +113,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

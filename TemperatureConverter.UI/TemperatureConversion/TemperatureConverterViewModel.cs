@@ -10,7 +10,7 @@ using TemperatureConverter.UI.UserNotifications;
 
 namespace TemperatureConverter.UI.TemperatureConversion
 {
-	public class TemperatureConverterViewModel : ViewModelBase, ITemperatureConverterViewModel
+	public class TemperatureConverterViewModel : ValidatingViewModelBase, ITemperatureConverterViewModel
 	{
 		private readonly ITemperatureConverter _temperatureConverter;
 		private readonly IUserNotificationManager _userNotificationManager;
@@ -18,7 +18,7 @@ namespace TemperatureConverter.UI.TemperatureConversion
 		private bool _isCelciusToFahrenheit;
 		private string _inputUnitLabel;
 		private string _outputUnitLabel;
-		private decimal? _inputValue;
+		private string _inputText;
 		private decimal? _outputValue;
 		private Func<decimal, Task<decimal>> _conversionMethod;
 		private bool _isBusy;
@@ -40,21 +40,28 @@ namespace TemperatureConverter.UI.TemperatureConversion
 
 		public string OutputUnitLabel { get => _outputUnitLabel; private set => SetProperty(ref _outputUnitLabel, value); }
 
-		public decimal? InputValue
+		public string InputText
 		{
-			get => _inputValue;
+			get => _inputText;
 			set
 			{
-				var isChanged = SetProperty(ref _inputValue, value);
+				var isChanged = SetProperty(ref _inputText, value);
 
 				if (isChanged)
+				{
+					ClearErrors();
+					RaisePropertyChanged(nameof(InputTooltip));
 					OutputValue = null;
+				}
 			}
 		}
 
 		public decimal? OutputValue { get => _outputValue; private set => SetProperty(ref _outputValue, value); }
 
 		public bool IsBusy { get => _isBusy; private set => SetProperty(ref _isBusy, value); }
+
+		public string InputTooltip
+			=> GetErrorsText(nameof(InputText)) ?? Properties.Resources.InputTooltip;
 
 		public ICommand SwapUnitsCommand { get; }
 
@@ -87,16 +94,19 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			IsCelciusToFahrenheit = !IsCelciusToFahrenheit;
 
 			OutputValue = null;
-			InputValue = null;
+			InputText = null;
 		}
 
 		private async Task ExecuteConvertAsync()
 		{
+			if (!TryParseInput(out var inputValue))
+				return;
+
 			IsBusy = true;
 
 			try
 			{
-				OutputValue = await _conversionMethod(InputValue.Value);
+				OutputValue = await _conversionMethod(inputValue);
 			}
 			catch (OverflowException exception)
 			{
@@ -106,6 +116,18 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			{
 				IsBusy = false;
 			}
+		}
+
+		private bool TryParseInput(out decimal inputValue)
+		{
+			var isValid = decimal.TryParse(InputText, out inputValue);
+
+			if (!isValid)
+				AddError(nameof(InputText), Properties.Resources.InputError);
+
+			RaisePropertyChanged(nameof(InputTooltip));
+
+			return isValid;
 		}
 	}
 }
