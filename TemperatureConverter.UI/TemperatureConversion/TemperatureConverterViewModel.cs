@@ -108,7 +108,7 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			{
 				OutputValue = await _conversionMethod(inputValue);
 			}
-			catch (OverflowException exception)
+			catch (OverflowException)
 			{
 				_userNotificationManager.Warning(Properties.Resources.OverflowWarning);
 			}
