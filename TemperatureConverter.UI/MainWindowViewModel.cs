@@ -10,7 +10,7 @@ using TemperatureConverter.UI.TemperatureConversion;
 
 namespace TemperatureConverter.UI
 {
-	public class MainWindowViewModel : ViewModelBase
+	public class MainWindowViewModel : ViewModelBase, IMainWindowViewModel
 	{
 		public MainWindowViewModel(ITemperatureConverterViewModel temperatureConverterViewModel)
 		{

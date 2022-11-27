@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using DryIoc;
 
 namespace TemperatureConverter.UI
 {
@@ -13,5 +14,11 @@ namespace TemperatureConverter.UI
 	/// </summary>
 	public partial class App : Application
 	{
+		private void Application_Startup(object sender, StartupEventArgs e)
+		{
+			var container = ContainerFactory.CreateContainer();
+
+			container.Resolve<MainWindow>().Show();
+		}
 	}
 }
