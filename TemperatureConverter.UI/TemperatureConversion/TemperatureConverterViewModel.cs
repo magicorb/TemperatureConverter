@@ -12,6 +12,17 @@ namespace TemperatureConverter.UI.TemperatureConversion
 {
 	public class TemperatureConverterViewModel : ViewModelBase, ITemperatureConverterViewModel
 	{
+		private readonly ITemperatureConverter _temperatureConverter;
+		private readonly IUserNotificationManager _userNotificationManager;
+
+		private bool _isCelciusToFahrenheit;
+		private string _inputUnitLabel;
+		private string _outputUnitLabel;
+		private decimal? _inputValue;
+		private decimal? _outputValue;
+		private Func<decimal, Task<decimal>> _conversionMethod;
+		private bool _isBusy;
+
 		public TemperatureConverterViewModel(
 			ITemperatureConverter temperatureConverter,
 			IUserNotificationManager userNotificationManager)
@@ -25,15 +36,9 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			IsCelciusToFahrenheit = true;
 		}
 
-		private string _inputUnitLabel;
-
 		public string InputUnitLabel { get => _inputUnitLabel; private set => SetProperty(ref _inputUnitLabel, value); }
 
-		private string _outputUnitLabel;
-
 		public string OutputUnitLabel { get => _outputUnitLabel; private set => SetProperty(ref _outputUnitLabel, value); }
-
-		private decimal? _inputValue;
 
 		public decimal? InputValue
 		{
@@ -47,23 +52,13 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			}
 		}
 
-		private decimal? _outputValue;
-
 		public decimal? OutputValue { get => _outputValue; private set => SetProperty(ref _outputValue, value); }
-
-		private bool _isBusy;
 
 		public bool IsBusy { get => _isBusy; private set => SetProperty(ref _isBusy, value); }
 
 		public ICommand SwapUnitsCommand { get; }
 
 		public ICommand ConvertCommand { get; }
-
-		private readonly ITemperatureConverter _temperatureConverter;
-
-		private readonly IUserNotificationManager _userNotificationManager;
-
-		private bool _isCelciusToFahrenheit;
 
 		private bool IsCelciusToFahrenheit
 		{
@@ -87,8 +82,6 @@ namespace TemperatureConverter.UI.TemperatureConversion
 			}
 		}
 
-		private Func<decimal, Task<decimal>> _conversionMethod;
-
 		private void ExecuteSwapUnits()
 		{
 			IsCelciusToFahrenheit = !IsCelciusToFahrenheit;
@@ -103,8 +96,7 @@ namespace TemperatureConverter.UI.TemperatureConversion
 
 			try
 			{
-				decimal outputValue = await _conversionMethod(InputValue.Value);
-				OutputValue = outputValue;
+				OutputValue = await _conversionMethod(InputValue.Value);
 			}
 			catch (OverflowException exception)
 			{
